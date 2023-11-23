@@ -1,0 +1,4 @@
+repository "HapticsTreasureHuntVR@TheOddKing@cloud"
+  path "/"
+    br "/main"
+    co "/main"
