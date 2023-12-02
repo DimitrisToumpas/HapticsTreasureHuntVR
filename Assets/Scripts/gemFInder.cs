@@ -2,22 +2,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.UI;
+using System.Collections;
 
 public class gemFinder : MonoBehaviour
 {
     public Text pointsText; // Reference to the UI Text component
     private string gemTag = "Gem"; // Set the tag for your gem objects in the Unity Editor
-    public float minDuration = 0.1f;
-    public float maxDuration = 0.5f;
-    public float maxDistance = 2f; // Define the maximum distance for haptic feedback
+    public float maxDistance; // Define the maximum distance for haptic feedback
     public XRDirectInteractor controller;
     private bool isFound;
+    private float WaitTime;
+    public float minWaitTime = 2f;
+    public float maxWaitTime = 6f;
     private int points = 0;
+
 
     // Dictionary to track discovered gems
     private Dictionary<GameObject, bool> discoveredGems = new Dictionary<GameObject, bool>();
 
 
+    
 
     private void Update()
     {
@@ -37,11 +41,12 @@ public class gemFinder : MonoBehaviour
             if (distance <= maxDistance)
             {
                 // Log the name of the closest gem to the console
-                Debug.Log("Closest Gem: " + closestGem.name);
+                //Debug.Log("Closest Gem: " + closestGem.name);
 
-                // Adjust vibration based on distance
-                float vibrationIntensity = Mathf.Lerp(0f, 1f, 1f - Mathf.Clamp01(distance / maxDistance));
-                float vibrationDuration = Mathf.Lerp(minDuration, maxDuration, Mathf.Clamp01(distance / maxDistance));
+                //get Vibration Intensity and how long the gap is
+                float vibrationIntensity = GetVibrationIntensity(distance);
+                //float vibrationDuration = GetVibrationDuration(distance);
+                float vibrationPatternGap = GetVibrationPatternWaitTime(distance);
 
                 if (closestGem != null)
                 {
@@ -55,15 +60,85 @@ public class gemFinder : MonoBehaviour
 
                         if (IsMaterialTransparent(gemMaterial))
                         {
-                            // Trigger vibration on the hand controller
-                            controller.SendHapticImpulse(vibrationIntensity, vibrationDuration);
+                            // Start the coroutine to handle the vibration pattern with a gap
+                            StartCoroutine(VibrationPattern(vibrationIntensity, vibrationPatternGap));
+                            
+                            // Debug.Log("Distance= "+distance);
+                            //Debug.Log("Intensity= "+vibrationIntensity);
+                            //controller.SendHapticImpulse(vibrationIntensity, 0.5f);
                         }
                     }
                 }
             }
         }
     }
+    //vibration!
+    private float GetVibrationIntensity(float distance)
+    {
+        float hapticStrength = 1f - Mathf.Clamp01(distance / 10f); // Assuming 20 units as a reference distance
 
+
+        return hapticStrength;
+    }
+
+
+    private float GetVibrationPatternWaitTime(float distance)
+    {       
+        
+        
+
+        if (distance<=50f)
+        {
+            WaitTime=5f;
+        } else if(distance<=30f)
+        {
+            WaitTime=3f;
+        }
+        else if (distance<=20f)
+        {
+            WaitTime=minWaitTime;
+        }
+        else
+            WaitTime=maxWaitTime;
+
+        return WaitTime;
+    }
+
+    private float GetVibrationDuration(float distance)
+    {
+        float duration;
+        float minDuration = 0.5f;
+        float maxDuration = 2f;
+        if (distance<5) {
+
+            duration=minDuration;
+        } else if (distance<50) 
+        {
+            duration=1f;
+        }
+
+            duration=maxDuration;
+
+        return duration;
+    }
+
+
+    private IEnumerator VibrationPattern(float intensity, float vibrationPatternGap)
+    {
+        // Trigger the first vibration
+        controller.SendHapticImpulse(intensity, 0.5f);
+
+        // Wait for a short duration
+        yield return new WaitForSeconds(0.5f);
+
+        // Pause before the next vibration
+        yield return new WaitForSeconds(vibrationPatternGap);
+
+        // Trigger the second vibration
+        controller.SendHapticImpulse(intensity, 0.5f);
+    }
+
+    //gem discovery!
     private GameObject GetClosestGem(GameObject[] gems)
     {
         GameObject closestGem = null;
