@@ -1558,6 +1558,7 @@ GameObject:
   - component: {fileID: 469399478}
   - component: {fileID: 469399477}
   - component: {fileID: 469399484}
+  - component: {fileID: 469399485}
   m_Layer: 0
   m_Name: CubeTry
   m_TagString: Untagged
@@ -1845,6 +1846,18 @@ MonoBehaviour:
   inSlot: 0
   slotRotation: {x: 0, y: 0, z: 0}
   currentSlot: {fileID: 0}
+--- !u!114 &469399485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469399476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 499e1e7e65b419c48bea73275923aa46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &473114682
 GameObject:
   m_ObjectHideFlags: 0
@@ -10905,6 +10918,8 @@ GameObject:
   - component: {fileID: 1917846541}
   - component: {fileID: 1917846540}
   - component: {fileID: 1917846542}
+  - component: {fileID: 5334037119158745636}
+  - component: {fileID: 5334037119158745637}
   m_Layer: 3
   m_Name: ruby
   m_TagString: Gem
@@ -10977,6 +10992,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832149486178091607}
   m_Mesh: {fileID: -5495902117074765545, guid: e155c7406e44866429788432315c07ad, type: 3}
+--- !u!114 &5334037119158745636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832149486178091607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 499e1e7e65b419c48bea73275923aa46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5334037119158745637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832149486178091607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 910abb49c9202844a95cc8181b7a28ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inSlot: 0
+  slotRotation: {x: 0, y: 0, z: 0}
+  currentSlot: {fileID: 0}
 --- !u!1001 &6885899476419926669
 PrefabInstance:
   m_ObjectHideFlags: 0

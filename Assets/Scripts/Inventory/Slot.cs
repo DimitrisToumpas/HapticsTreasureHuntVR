@@ -31,17 +31,7 @@ public class Slot : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        GameObject obj = other.gameObject;
-
-        if (IsItem(obj) && obj.GetComponent<Item>().inSlot)
-        {
-            
-            DetachItem(obj);
-            Debug.Log("Item detached from slot!");
-        }
-    }
+  
 
     bool IsItem(GameObject obj)
     {
@@ -50,7 +40,6 @@ public class Slot : MonoBehaviour
 
     void InsertItem(GameObject obj)
     {
-        Debug.Log("Setting isKinematic to true");
         obj.GetComponent<Rigidbody>().isKinematic = true;
         obj.transform.SetParent(gameObject.transform, true);
         obj.transform.localPosition = Vector3.zero;
@@ -61,15 +50,14 @@ public class Slot : MonoBehaviour
         SlotImage.color = Color.gray;
     }
 
-    void DetachItem(GameObject obj)
+    public void DetachItem(GameObject obj)
     {
         Item itemComponent = obj.GetComponent<Item>();
 
         if (itemComponent != null && itemComponent.currentSlot == this)
         {
             // Detach the item from the slot
-            obj.transform.SetParent(null);
-            Debug.Log("Setting isKinematic to false");
+            obj.transform.SetParent(null);  
             obj.GetComponent<Rigidbody>().isKinematic = false;
             itemComponent.inSlot = false;
             itemComponent.currentSlot.ResetColor();
