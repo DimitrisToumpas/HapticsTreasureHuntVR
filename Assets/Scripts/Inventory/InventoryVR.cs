@@ -18,7 +18,7 @@ public class InventoryVR : MonoBehaviour
     {
         if (showButton.action.WasPressedThisFrame())
         {
-            Debug.Log("Menu button pressed");
+            
             UIActive = !UIActive;
             Inventory.SetActive(UIActive);
         }

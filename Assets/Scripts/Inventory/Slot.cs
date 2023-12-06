@@ -1,18 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.XR;
-
-
+using UnityEngine.InputSystem;
 
 public class Slot : MonoBehaviour
 {
     public GameObject ItemInSlot;
     public Image SlotImage;
     Color originalColor;
-    private XRBaseInteractor currentInteractor;
-    private XRController currentController;
-
+    public InputActionProperty gripRelease;
 
     private void Start()
     {
@@ -20,62 +16,32 @@ public class Slot : MonoBehaviour
         originalColor = SlotImage.color;
     }
 
-
-    private void Update()
-    {
-        if (ItemInSlot != null || currentController == null) return;
-
-        if (currentController.inputDevice.TryGetFeatureValue(CommonUsages.triggerButton, out bool triggerValue) && triggerValue)
-        {
-                    XRBaseInteractor interactor = currentController.GetComponent<XRBaseInteractor>();
-
-            if (interactor != null)
-            {
-                InsertItem(interactor.gameObject);
-            }
-        }
-    }
-
-
-
+    // Your existing OnTriggerStay method
     private void OnTriggerStay(Collider other)
     {
         if (ItemInSlot != null) return;
         GameObject obj = other.gameObject;
+       
         if (!IsItem(obj)) return;
-
-        // Get the XRGrabInteractable component from the interactable object
-        XRGrabInteractable grabInteractable = obj.GetComponent<XRGrabInteractable>();
-        // Use XRController instead of InputDevice
-        if (grabInteractable != null )
+        Collider slotCollider = GetComponent<Collider>();
+        Collider objCollider = obj.GetComponent<Collider>();
+        if (gripRelease.action.WasReleasedThisFrame()&& slotCollider.bounds.Intersects(objCollider.bounds))
         {
-            grabInteractable.onSelectEnter.AddListener(OnSelectEnter);
-            grabInteractable.onSelectExit.AddListener(OnSelectExit);
+            InsertItem(obj);
         }
-        else Debug.Log("Provlima");
     }
 
-    private void OnSelectEnter(XRBaseInteractor interactor)
+    private void OnTriggerExit(Collider other)
     {
-        XRController controller = interactor.GetComponent<XRController>();
-        if (controller != null && controller.inputDevice.characteristics.HasFlag(UnityEngine.XR.InputDeviceCharacteristics.Controller))
+        GameObject obj = other.gameObject;
+
+        if (IsItem(obj) && obj.GetComponent<Item>().inSlot)
         {
-            currentController = controller;
+            
+            DetachItem(obj);
+            Debug.Log("Item detached from slot!");
         }
     }
-
-    private void OnSelectExit(XRBaseInteractor interactor)
-    {
-        XRDirectInteractor directInteractor = currentController.GetComponent<XRDirectInteractor>();
-        if (directInteractor != null && directInteractor  == currentController)
-        {
-            currentController = null;
-        }
-    }
-
-
-
-
 
     bool IsItem(GameObject obj)
     {
@@ -84,18 +50,38 @@ public class Slot : MonoBehaviour
 
     void InsertItem(GameObject obj)
     {
-        obj.GetComponent<Rigidbody>().isKinematic=true;
+        Debug.Log("Setting isKinematic to true");
+        obj.GetComponent<Rigidbody>().isKinematic = true;
         obj.transform.SetParent(gameObject.transform, true);
         obj.transform.localPosition = Vector3.zero;
         obj.transform.localEulerAngles = obj.GetComponent<Item>().slotRotation;
-        obj.GetComponent<Item>().inSlot= true;
+        obj.GetComponent<Item>().inSlot = true;
         obj.GetComponent<Item>().currentSlot = this;
-        ItemInSlot=obj;
+        ItemInSlot = obj;
         SlotImage.color = Color.gray;
     }
 
+    void DetachItem(GameObject obj)
+    {
+        Item itemComponent = obj.GetComponent<Item>();
+
+        if (itemComponent != null && itemComponent.currentSlot == this)
+        {
+            // Detach the item from the slot
+            obj.transform.SetParent(null);
+            Debug.Log("Setting isKinematic to false");
+            obj.GetComponent<Rigidbody>().isKinematic = false;
+            itemComponent.inSlot = false;
+            itemComponent.currentSlot.ResetColor();
+            itemComponent.currentSlot = null;
+            ItemInSlot = null;
+            
+        }
+    }
+
+
     public void ResetColor()
     {
-        SlotImage.color= originalColor;
+        SlotImage.color = originalColor;
     }
 }

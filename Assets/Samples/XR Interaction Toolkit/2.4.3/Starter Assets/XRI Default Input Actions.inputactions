@@ -1437,6 +1437,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "InsertInSlot",
+                    "type": "Button",
+                    "id": "74d0699c-ebbb-4a69-89f6-5edb77cac8e7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1580,6 +1589,17 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "UI Scroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0be1fa21-25e9-4bc2-9c75-b7099e259b9d",
+                    "path": "<OculusTouchController>{RightHand}/{GripButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "InsertInSlot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
