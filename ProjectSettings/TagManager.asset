@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Hand
   - Gem
+  - Anchor
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - Gem
   - Water
   - UI
-  - 
+  - Item
   - 
   - 
   - 

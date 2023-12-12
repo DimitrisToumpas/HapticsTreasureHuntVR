@@ -1446,6 +1446,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "LightSwitch",
+                    "type": "Button",
+                    "id": "64ec0799-ec73-4bb1-92c4-8e0234362957",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1600,6 +1609,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "InsertInSlot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "632aeb0f-49be-49f5-9ec1-dc8876dd6847",
+                    "path": "<OculusTouchController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LightSwitch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
