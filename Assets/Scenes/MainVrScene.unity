@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.05
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0063658743, g: 0.0067073787, b: 0.0060539353, a: 0.05}
+  m_IndirectSpecularColor: {r: 0.009014189, g: 0.011285706, b: 0.015346142, a: 0.05}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -964,7 +964,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &222471958
 Transform:
   m_ObjectHideFlags: 0
@@ -2830,7 +2830,7 @@ GameObject:
   - component: {fileID: 553308914}
   - component: {fileID: 553308913}
   m_Layer: 0
-  m_Name: GemHole (2)
+  m_Name: GemHole3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3925,7 +3925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &831617655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6795,6 +6795,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313020111}
   m_CullTransparentMesh: 1
+--- !u!1 &1314763354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1314763355}
+  m_Layer: 0
+  m_Name: WallGate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1314763355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314763354}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.359943, y: 2.5472374, z: 6.9831367}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1659725175}
+  - {fileID: 1641565503}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1403527943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6935,7 +6968,7 @@ GameObject:
   - component: {fileID: 1429947760}
   - component: {fileID: 1429947759}
   m_Layer: 0
-  m_Name: GemHole (1)
+  m_Name: GemHole2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8154,6 +8187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1641565503}
+  - component: {fileID: 1641565504}
   m_Layer: 0
   m_Name: movingWall
   m_TagString: Untagged
@@ -8169,17 +8203,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1641565502}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.051805, y: 2.981149, z: 6.593939}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.69186115, y: 0.43391156, z: -0.38919783}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1823064711}
   - {fileID: 38509034}
   - {fileID: 342250237}
-  - {fileID: 1659725175}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1314763355}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1641565504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641565502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eddc0f4624bb65447915671ed8399cb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
+  moveDistance: 5
 --- !u!1001 &1647000970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8251,6 +8298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1659725175}
+  - component: {fileID: 1659725176}
   m_Layer: 0
   m_Name: gemDoorPuzzle
   m_TagString: Untagged
@@ -8267,15 +8315,28 @@ Transform:
   m_GameObject: {fileID: 1659725174}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7147417, y: -0.63606286, z: -0.09255409}
+  m_LocalPosition: {x: -0.022880554, y: -0.2021513, z: -0.48175192}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2113545268}
   - {fileID: 1429947763}
   - {fileID: 553308917}
-  m_Father: {fileID: 1641565503}
+  m_Father: {fileID: 1314763355}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1659725176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659725174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f69a8dff5d978419436a2878c82e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallGateOpen: 0
 --- !u!1 &1674448099
 GameObject:
   m_ObjectHideFlags: 0
@@ -12082,5 +12143,5 @@ SceneRoots:
   - {fileID: 1526526681}
   - {fileID: 1588185479}
   - {fileID: 962936815}
-  - {fileID: 1641565503}
+  - {fileID: 1314763355}
   - {fileID: 831617657}
