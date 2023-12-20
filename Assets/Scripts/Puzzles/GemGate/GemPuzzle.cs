@@ -3,7 +3,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class GemPuzzle : MonoBehaviour
 {
-    public bool wallGateOpen = false;
+    public static bool wallGateOpen = false;
 
 
 

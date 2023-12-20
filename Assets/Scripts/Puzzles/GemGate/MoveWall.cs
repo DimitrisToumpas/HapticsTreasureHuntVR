@@ -4,15 +4,14 @@ public class MoveWall : MonoBehaviour
 {
     public float moveSpeed = 1.0f;
     public float moveDistance = 5.0f;
-
-    private GemPuzzle gemPuzzleScript; // Reference to the gemPuzzle script
-
     private Transform[] walls;
+
+    
 
     void Start()
     {
-        // Assuming the walls are direct children of this GameObject
-        walls = new Transform[transform.childCount];
+    // Assuming the walls are direct children of this GameObject
+    walls = new Transform[transform.childCount];
 
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -22,7 +21,8 @@ public class MoveWall : MonoBehaviour
 
     void Update()
     {
-        if (gemPuzzleScript.wallGateOpen) { 
+
+        if (GemPuzzle.wallGateOpen){ 
         MoveWalls();
         }
     }

@@ -7,6 +7,7 @@ TagManager:
   - Hand
   - Gem
   - Anchor
+  - green_key
   layers:
   - Default
   - TransparentFX
