@@ -8,6 +8,8 @@ TagManager:
   - Gem
   - Anchor
   - green_key
+  - ice_key
+  - blue_key
   layers:
   - Default
   - TransparentFX
