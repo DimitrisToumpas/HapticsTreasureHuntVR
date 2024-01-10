@@ -32,7 +32,7 @@ public class MoveWall : MonoBehaviour
         // Move each wall to the right
         foreach (Transform wall in walls)
         {
-            Vector3 newPosition = wall.position + Vector3.right * moveSpeed * Time.deltaTime;
+            Vector3 newPosition = wall.position + Vector3.up * moveSpeed * Time.deltaTime;
             wall.position = Vector3.MoveTowards(wall.position, newPosition, moveSpeed * Time.deltaTime);
         }
 
