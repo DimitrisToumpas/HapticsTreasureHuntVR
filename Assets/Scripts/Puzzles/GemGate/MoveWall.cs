@@ -4,19 +4,19 @@ public class MoveWall : MonoBehaviour
 {
     public float moveSpeed = 1.0f;
     public float moveDistance = 5.0f;
-    private Transform[] walls;
+    public Transform[] walls;
 
     
 
     void Start()
     {
     // Assuming the walls are direct children of this GameObject
-    walls = new Transform[transform.childCount];
+    /*walls = new Transform[transform.childCount];
 
         for (int i = 0; i < transform.childCount; i++)
         {
             walls[i] = transform.GetChild(i);
-        }
+        }*/
     }
 
     void Update()
