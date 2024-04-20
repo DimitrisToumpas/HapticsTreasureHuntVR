@@ -1,0 +1,38 @@
+---
+
+# VR Haptics Puzzle Game (Made with Unity)
+Welcome to the repository for Cave Explorer, an immersive virtual reality (VR) puzzle game built with Unity for Oculus VR headsets, specifically the Meta 2. 
+
+
+## Overview
+
+The game plunges players into an underground labyrinth, challenging them to solve puzzles using VR mechanics and haptic feedback. Navigate through the cave's twists and turns, utilizing haptic feedback to uncover hidden objects and solve the mysteries within.
+
+## Features
+
+- **Immersive VR Experience**: Dive into a realistic cave environment, enhanced with stunning graphics and audio effects.
+- **Puzzle Solving**: Put your problem-solving skills to the test as you unravel the secrets of the cave.
+- **Haptic Feedback**: Feel your way through the darkness with haptic feedback, guiding you towards important objects and clues.
+- **Oculus Meta 2 Support**: Built specifically for Oculus VR headsets, ensuring a seamless experience for Meta 2 users.
+
+## Installation
+
+To experience Cave Explorer on your Oculus Meta 2 headset, follow these steps:
+
+1. Download the APK file from [here](link-to-apk-file).
+
+2. Transfer the downloaded APK file to your Oculus Meta 2 device.
+
+3. Install the APK on your Meta 2 device and launch the game.
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute send us an email at dimitristoumpas99@gmail.com .
+
+## Credits
+
+Cave Explorer was created by ΓΑΛΛΕ ΜΙΧΑΗΛΙΑ, ΠΟΥΤΑΧΙΔΗΣ ΓΕΩΡΓΙΟΣ, ΤΟΥΜΠΑΣ ΔΗΜΗΤΡΙΟΣ
+
+as a university assignment. Special thanks to our professor, Κοκκώνης Γεώργιος for guidance and support throughout the development process.
+
+---
