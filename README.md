@@ -19,7 +19,7 @@ The game plunges players into an underground labyrinth, challenging them to solv
 
 To experience the Alpha on your Oculus headset, follow these steps:
 
-1. Download the APK file from [Here]().
+1. Download the APK file from [Here](https://github.com/DimitrisToumpas/HapticsTreasureHuntVR/releases/tag/AlphaV2).
 
 2. Transfer the downloaded APK file to your Oculus device using a tool like SideQuest. If you don't have SideQuest installed, you can download it from [Here](https://sidequestvr.com/setup-howto).
 Install the APK on your Meta 2 device using SideQuest and launch the game.
