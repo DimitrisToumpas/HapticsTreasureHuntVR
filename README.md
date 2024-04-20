@@ -1,7 +1,7 @@
 ---
 
 # VR Haptics Puzzle Game (Made with Unity)
-Welcome to the repository for Cave Explorer, an immersive virtual reality (VR) puzzle game built with Unity for Oculus VR headsets, specifically the Meta 2. 
+Welcome to the repository for "Eclipsed Heritage", an immersive virtual reality (VR) puzzle game built with Unity for Oculus VR headsets, specifically the Meta 2. 
 
 
 ## Overview
@@ -17,11 +17,12 @@ The game plunges players into an underground labyrinth, challenging them to solv
 
 ## Installation
 
-To experience Cave Explorer on your Oculus Meta 2 headset, follow these steps:
+To experience the Alpha on your Oculus headset, follow these steps:
 
-1. Download the APK file from [here](link-to-apk-file).
+1. Download the APK file from [Here]().
 
-2. Transfer the downloaded APK file to your Oculus Meta 2 device.
+2. Transfer the downloaded APK file to your Oculus device using a tool like SideQuest. If you don't have SideQuest installed, you can download it from [Here](https://sidequestvr.com/setup-howto).
+Install the APK on your Meta 2 device using SideQuest and launch the game.
 
 3. Install the APK on your Meta 2 device and launch the game.
 
