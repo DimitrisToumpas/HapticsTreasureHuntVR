@@ -1,7 +1,7 @@
 ---
 
 # VR Haptics Puzzle Game (Made with Unity)
-Welcome to the repository for "Eclipsed Heritage", an immersive virtual reality (VR) puzzle game built with Unity for Oculus VR headsets, specifically the Meta 2. 
+Welcome to the repository for "Eclipsed Heritage", an immersive virtual reality (VR) puzzle game built with Unity for Oculus VR headsets, specifically the Meta Quest 2. 
 
 
 ## Overview
@@ -13,7 +13,7 @@ The game plunges players into an underground labyrinth, challenging them to solv
 - **Immersive VR Experience**: Dive into a realistic cave environment, enhanced with stunning graphics and audio effects.
 - **Puzzle Solving**: Put your problem-solving skills to the test as you unravel the secrets of the cave.
 - **Haptic Feedback**: Feel your way through the darkness with haptic feedback, guiding you towards important objects and clues.
-- **Oculus Meta 2 Support**: Built specifically for Oculus VR headsets, ensuring a seamless experience for Meta 2 users.
+- **Oculus Meta Quest 2 Support**: Built specifically for Oculus VR headsets, ensuring a seamless experience for Quest 2 users.
 
 ## Installation
 
@@ -24,7 +24,8 @@ To experience the Alpha on your Oculus headset, follow these steps:
 2. Transfer the downloaded APK file to your Oculus device using a tool like SideQuest. If you don't have SideQuest installed, you can download it from [Here](https://sidequestvr.com/setup-howto).
 Install the APK on your Meta 2 device using SideQuest and launch the game.
 
-3. Install the APK on your Meta 2 device and launch the game.
+3. Install the APK, following SideQuest instractions, on your VR device and finally launch the game.
+(if u can't see the apk file on our device check under 'unknown sources' tab ).
 
 ## Contributing
 
